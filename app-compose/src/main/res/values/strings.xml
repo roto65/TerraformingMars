@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Terraforming Mars - Compose</string>
+    <string name="resource_coin">Coins</string>
+    <string name="resource_steel">Steel</string>
+    <string name="resource_titanium">Titanium</string>
+    <string name="resource_plant">Plants</string>
+    <string name="resource_energy">Energy</string>
+    <string name="resource_heat">Heat</string>
+    <string name="label_amount">Amount</string>
+    <string name="label_increment">Increment</string>
+</resources>
