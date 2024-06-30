@@ -8,11 +8,11 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="light_blue">@color/footer</color>
-    <color name="text">#FF091E28</color>
-    <color name="card">#FFABCEE3</color>
+    <color name="text">#FFD1E5F4</color>
+    <color name="card">#FF214C67</color>
     <color name="grey">#7F7F7F7F</color>
-    <color name="background">#FFFAFAFA</color>
-    <color name="footer">#FFD1E5F4</color>
-    <color name="vector">#FF21323E</color>
-    <color name="buttonBackground">#EEFFFFFF</color>
+    <color name="background">#FF1E2023</color>
+    <color name="footer">#FF3B4954</color>
+    <color name="vector">#FF96D6FF</color>
+    <color name="buttonBackground">#FF22282B</color>
 </resources>

@@ -3,4 +3,20 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="generation">Generation</string>
+    <string name="production">Production</string>
+    <string name="forest">Forest</string>
+    <string name="temp_rise">Temp Rise</string>
+    <string name="increment">Increment</string>
+    <string name="amount">Amount</string>
+    <string name="coin_lbl">Coins: %1$s</string>
+    <string name="steel_lbl">Steel: %1$s</string>
+    <string name="titanium_lbl">Titanium: %1$s</string>
+    <string name="plant_lbl">Plants: %1$s</string>
+    <string name="energy_lbl">Energy: %1$s</string>
+    <string name="heat_lbl">Heat: %1$s</string>
+    <string name="generation_lbl"> : %1$s</string>
+    <string name="undo">Undo</string>
+    <string name="clear">Clear</string>
+    <string name="about">About</string>
 </resources>

@@ -151,7 +151,7 @@ fun Header(scrollBehavior: TopAppBarScrollBehavior, modifier: Modifier = Modifie
             IconButton(onClick = { expanded = !expanded }) {
                 Icon(
                     imageVector = Icons.Filled.Menu,
-                    contentDescription = "Localized description"
+                    contentDescription = null
                 )
             }
             DropdownMenu(

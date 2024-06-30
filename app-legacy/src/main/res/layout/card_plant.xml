@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardview_plant"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="10dp"
+    android:layout_marginTop="10dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/card"
+        app:layout_constraintBottom_toBottomOf="@+id/base_cardview"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/plant_fixed_layout"
+            android:layout_width="match_parent"
+            android:layout_height="96dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/planticon" />
+
+            <TextView
+                android:id="@+id/plant_amount_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_weight="1"
+                android:text="Plant: 0"
+                android:textColor="@color/text"
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/plant_increment_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="+0"
+                android:textColor="@color/text"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <ImageButton
+                android:id="@+id/plant_arrow_button"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="10dp"
+                android:background="@android:color/transparent"
+                android:src="@drawable/rounded_keyboard_arrow_down_24"
+                app:tint="@color/text" />
+
+        </LinearLayout>
+
+        <TableLayout
+            android:id="@+id/plant_hidden_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:orientation="vertical"
+            android:stretchColumns="0,1"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/plant_fixed_layout">
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4dp"
+                        android:gravity="center"
+                        android:text="@string/amount"
+                        android:textColor="@color/text"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <ImageButton
+                            android:id="@+id/plant_decrement_amount"
+                            android:layout_width="48dp"
+                            android:layout_height="32dp"
+                            android:background="@drawable/rounded_button"
+                            android:src="@drawable/rounded_remove_24"
+                            app:tint="@color/vector" />
+
+                        <TextView
+                            android:id="@+id/plant_amount_sub"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="8dp"
+                            android:text="+0"
+                            android:textColor="@color/text"
+                            android:textSize="20dp"
+                            android:textStyle="bold" />
+
+                        <ImageButton
+                            android:id="@+id/plant_increment_amount"
+                            android:layout_width="48dp"
+                            android:layout_height="32dp"
+                            android:background="@drawable/rounded_button"
+                            android:src="@drawable/rounded_add_24"
+                            app:tint="@color/vector" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4dp"
+                        android:gravity="center"
+                        android:text="@string/increment"
+                        android:textColor="@color/text"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <ImageButton
+                            android:id="@+id/plant_decrement_increment"
+                            android:layout_width="48dp"
+                            android:layout_height="32dp"
+                            android:background="@drawable/rounded_button"
+                            android:src="@drawable/rounded_remove_24"
+                            app:tint="@color/vector" />
+
+                        <TextView
+                            android:id="@+id/plant_increment_sub"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="8dp"
+                            android:text="+0"
+                            android:textColor="@color/text"
+                            android:textSize="20dp"
+                            android:textStyle="bold" />
+
+
+                        <ImageButton
+                            android:id="@+id/plant_increment_increment"
+                            android:layout_width="48dp"
+                            android:layout_height="32dp"
+                            android:background="@drawable/rounded_button"
+                            android:src="@drawable/rounded_add_24"
+                            app:tint="@color/vector" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </TableRow>
+        </TableLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
