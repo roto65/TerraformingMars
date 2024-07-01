@@ -6,7 +6,6 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.Saver
 import androidx.compose.runtime.saveable.listSaver
 import androidx.compose.runtime.setValue
-import kotlin.random.Random
 
 data class BoardState(var default: Int = 0) {
     var coinCount by mutableIntStateOf(default)

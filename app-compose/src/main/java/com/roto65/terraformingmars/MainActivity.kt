@@ -136,7 +136,7 @@ fun App(modifier: Modifier = Modifier, prevState: BoardState = BoardState()) {
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun Header(scrollBehavior: TopAppBarScrollBehavior, modifier: Modifier = Modifier) {
+fun Header(scrollBehavior: TopAppBarScrollBehavior) {
     var expanded by rememberSaveable {
         mutableStateOf(false)
     }
