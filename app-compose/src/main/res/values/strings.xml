@@ -8,4 +8,7 @@
     <string name="resource_heat">Heat</string>
     <string name="label_amount">Amount</string>
     <string name="label_increment">Increment</string>
+    <string name="forest_fail">Not enough plants</string>
+    <string name="temp_rise_fail">Not enough heat</string>
+    <string name="credits">Developed by FA SP AR</string>
 </resources>

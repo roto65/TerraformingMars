@@ -1,8 +1,5 @@
 <resources>
     <string name="app_name">Terraforming Mars - Legacy</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
     <string name="generation">Generation</string>
     <string name="production">Production</string>
     <string name="forest">Forest</string>
@@ -19,4 +16,10 @@
     <string name="undo">Undo</string>
     <string name="clear">Clear</string>
     <string name="about">About</string>
+    <string name="default_description">none</string>
+    <string name="default_increment">+0</string>
+    <string name="default_generation">: 1</string>
+    <string name="forest_fail">Not enough plants</string>
+    <string name="temp_rise_fail">Not enough heat</string>
+    <string name="credits">Developed by FA SP AR</string>
 </resources>

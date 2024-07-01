@@ -10,22 +10,22 @@ import kotlin.random.Random
 
 data class BoardState(var default: Int = 0) {
     var coinCount by mutableIntStateOf(default)
-    var coinIncrement by mutableIntStateOf(Random.nextInt(-2, 10))
+    var coinIncrement by mutableIntStateOf(default)
 
     var steelCount by mutableIntStateOf(default)
-    var steelIncrement by mutableIntStateOf(Random.nextInt(-2, 10))
+    var steelIncrement by mutableIntStateOf(default)
 
     var titaniumCount by mutableIntStateOf(default)
-    var titaniumIncrement by mutableIntStateOf(Random.nextInt(-2, 10))
+    var titaniumIncrement by mutableIntStateOf(default)
 
     var plantsCount by mutableIntStateOf(default)
-    var plantsIncrement by mutableIntStateOf(Random.nextInt(-2, 10))
+    var plantsIncrement by mutableIntStateOf(default)
 
     var energyCount by mutableIntStateOf(default)
-    var energyIncrement by mutableIntStateOf(Random.nextInt(-2, 10))
+    var energyIncrement by mutableIntStateOf(default)
 
     var heatCount by mutableIntStateOf(default)
-    var heatIncrement by mutableIntStateOf(Random.nextInt(-2, 10))
+    var heatIncrement by mutableIntStateOf(default)
 
     var generation by mutableIntStateOf(1)
 
@@ -133,20 +133,26 @@ data class BoardState(var default: Int = 0) {
         energyCount = 0
     }
 
-    fun buildForest() {
+    fun buildForest(): Boolean {
         if (plantsCount >= 8) {
             prev = toString()
             canUndo = true
             plantsCount -= 8
+
+            return true
         }
+        return false
     }
 
-    fun raiseTemp() {
+    fun raiseTemp(): Boolean {
         if (heatCount >= 8) {
             prev = toString()
             canUndo = true
             heatCount -= 8
+
+            return true
         }
+        return false
     }
 
     fun productionPhase() {

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TableLayout android:id="@+id/bottomBar"
+<TableLayout xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottomBar"
     android:layout_width="match_parent"
     android:layout_height="@dimen/bottom_bar_height"
     android:layout_gravity="bottom"
@@ -11,7 +12,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <TableRow>
+    <TableRow tools:ignore="UselessParent">
 
         <LinearLayout
             android:layout_height="match_parent"
@@ -24,21 +25,24 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                tools:ignore="UseCompoundDrawables">
 
                 <ImageView
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_marginVertical="4dp"
-                    android:src="@drawable/genrationicon" />
+                    android:contentDescription="@string/default_description"
+                    android:src="@drawable/genrationicon"
+                    tools:ignore="ImageContrastCheck" />
 
                 <TextView
                     android:id="@+id/generation_label"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text=" : 1"
+                    android:text="@string/default_generation"
                     android:textColor="@color/text"
-                    android:textSize="24dp" />
+                    android:textSize="24sp" />
 
             </LinearLayout>
 
@@ -47,7 +51,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/generation"
                 android:textColor="@color/text"
-                android:textSize="12dp" />
+                android:textSize="12sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -63,6 +67,7 @@
             <ImageView
                 android:layout_width="48dp"
                 android:layout_height="48dp"
+                android:contentDescription="@string/default_description"
                 android:src="@drawable/gears" />
 
             <TextView
@@ -70,7 +75,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/production"
                 android:textColor="@color/text"
-                android:textSize="12dp" />
+                android:textSize="12sp" />
 
         </LinearLayout>
 
@@ -87,14 +92,16 @@
             <ImageView
                 android:layout_width="48dp"
                 android:layout_height="48dp"
-                android:src="@drawable/foresticon" />
+                android:contentDescription="@string/default_description"
+                android:src="@drawable/foresticon"
+                tools:ignore="ImageContrastCheck" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/forest"
                 android:textColor="@color/text"
-                android:textSize="12dp" />
+                android:textSize="12sp" />
 
         </LinearLayout>
 
@@ -111,6 +118,7 @@
             <ImageView
                 android:layout_width="48dp"
                 android:layout_height="48dp"
+                android:contentDescription="@string/default_description"
                 android:src="@drawable/tempicon" />
 
             <TextView
@@ -118,7 +126,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/temp_rise"
                 android:textColor="@color/text"
-                android:textSize="12dp" />
+                android:textSize="12sp" />
 
         </LinearLayout>
 

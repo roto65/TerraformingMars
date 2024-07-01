@@ -1,18 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/undo"
         android:icon="@drawable/rounded_undo_24"
-        android:title="@string/undo" />
+        android:title="@string/undo"
+        android:iconTint="@color/text"
+        android:iconTintMode="src_atop"/>
     <item
         android:id="@+id/clear"
         android:icon="@drawable/round_clear_24"
-        android:title="@string/clear" />
+        android:title="@string/clear"
+        android:iconTint="@color/text"
+        android:iconTintMode="src_atop"/>
 
     <item
         android:id="@+id/about"
         android:icon="@drawable/round_info_24"
-        android:title="@string/about" />
+        android:title="@string/about"
+        android:iconTint="@color/text"
+        android:iconTintMode="src_atop"/>
 
 </menu>

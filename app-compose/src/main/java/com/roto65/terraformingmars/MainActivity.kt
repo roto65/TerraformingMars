@@ -142,6 +142,7 @@ fun Header(scrollBehavior: TopAppBarScrollBehavior, modifier: Modifier = Modifie
     }
 
     val context = LocalContext.current
+    val credits = stringResource(id = R.string.credits)
 
     CenterAlignedTopAppBar(
         title = {
@@ -188,7 +189,7 @@ fun Header(scrollBehavior: TopAppBarScrollBehavior, modifier: Modifier = Modifie
                     }
                 )
                 DropdownMenuItem(onClick = {
-                    Toast.makeText(context, "Developed by FA SP AR", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context, credits, Toast.LENGTH_SHORT).show()
                 },
                     text = {
                         Text("About")
@@ -228,6 +229,10 @@ fun Footer(boardState: BoardState, modifier: Modifier = Modifier) {
     val horizontalPadding = 8.dp
     val colWidth = (LocalConfiguration.current.screenWidthDp.dp - (horizontalPadding * 2)) / 4
     val imgWidth = 48.dp
+
+    val context = LocalContext.current
+    val forestFail = stringResource(id = R.string.forest_fail)
+    val tempRiseFail = stringResource(id = R.string.temp_rise_fail)
 
     BottomAppBar(
         containerColor = MaterialTheme.colorScheme.secondaryContainer,
@@ -291,7 +296,15 @@ fun Footer(boardState: BoardState, modifier: Modifier = Modifier) {
                 horizontalAlignment = Alignment.CenterHorizontally,
                 modifier = modifier
                     .width(colWidth)
-                    .clickable(onClick = boardState::buildForest)
+                    .clickable(onClick = {
+                        val success = boardState.buildForest()
+
+                        if (!success) {
+                            Toast
+                                .makeText(context, forestFail, Toast.LENGTH_SHORT)
+                                .show()
+                        }
+                    })
             ) {
                 Image(
                     painter = painterResource(id = R.drawable.foresticon),
@@ -309,7 +322,15 @@ fun Footer(boardState: BoardState, modifier: Modifier = Modifier) {
                 horizontalAlignment = Alignment.CenterHorizontally,
                 modifier = modifier
                     .width(colWidth)
-                    .clickable(onClick = boardState::raiseTemp)
+                    .clickable(onClick = {
+                        val success = boardState.raiseTemp()
+
+                        if (!success) {
+                            Toast
+                                .makeText(context, tempRiseFail, Toast.LENGTH_SHORT)
+                                .show()
+                        }
+                    })
             ) {
                 Image(
                     painter = painterResource(id = R.drawable.tempicon),

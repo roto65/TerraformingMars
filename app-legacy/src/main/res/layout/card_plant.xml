@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/cardview_plant"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -27,25 +28,26 @@
                 android:layout_width="64dp"
                 android:layout_height="64dp"
                 android:layout_marginStart="10dp"
+                android:contentDescription="@string/default_description"
                 android:src="@drawable/planticon" />
 
             <TextView
                 android:id="@+id/plant_amount_label"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_weight="1"
-                android:text="Plant: 0"
+                android:text="@string/plant_lbl"
                 android:textColor="@color/text"
-                android:textSize="16dp" />
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/plant_increment_label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="+0"
+                android:text="@string/default_increment"
                 android:textColor="@color/text"
-                android:textSize="20dp"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
             <ImageButton
@@ -54,9 +56,11 @@
                 android:layout_height="32dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="10dp"
-                android:background="@android:color/transparent"
+                android:background="@drawable/button_state"
+                android:contentDescription="@string/default_description"
                 android:src="@drawable/rounded_keyboard_arrow_down_24"
-                app:tint="@color/text" />
+                app:tint="@color/text"
+                tools:ignore="TouchTargetSizeCheck,DuplicateSpeakableTextCheck"/>
 
         </LinearLayout>
 
@@ -75,7 +79,8 @@
 
             <TableRow
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                tools:ignore="UselessParent">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -103,6 +108,7 @@
                             android:layout_width="48dp"
                             android:layout_height="32dp"
                             android:background="@drawable/rounded_button"
+                            android:contentDescription="@string/default_description"
                             android:src="@drawable/rounded_remove_24"
                             app:tint="@color/vector" />
 
@@ -111,9 +117,9 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginHorizontal="8dp"
-                            android:text="+0"
+                            android:text="@string/default_increment"
                             android:textColor="@color/text"
-                            android:textSize="20dp"
+                            android:textSize="20sp"
                             android:textStyle="bold" />
 
                         <ImageButton
@@ -121,6 +127,7 @@
                             android:layout_width="48dp"
                             android:layout_height="32dp"
                             android:background="@drawable/rounded_button"
+                            android:contentDescription="@string/default_description"
                             android:src="@drawable/rounded_add_24"
                             app:tint="@color/vector" />
 
@@ -154,6 +161,7 @@
                             android:layout_width="48dp"
                             android:layout_height="32dp"
                             android:background="@drawable/rounded_button"
+                            android:contentDescription="@string/default_description"
                             android:src="@drawable/rounded_remove_24"
                             app:tint="@color/vector" />
 
@@ -162,17 +170,17 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginHorizontal="8dp"
-                            android:text="+0"
+                            android:text="@string/default_increment"
                             android:textColor="@color/text"
-                            android:textSize="20dp"
+                            android:textSize="20sp"
                             android:textStyle="bold" />
-
 
                         <ImageButton
                             android:id="@+id/plant_increment_increment"
                             android:layout_width="48dp"
                             android:layout_height="32dp"
                             android:background="@drawable/rounded_button"
+                            android:contentDescription="@string/default_description"
                             android:src="@drawable/rounded_add_24"
                             app:tint="@color/vector" />
 

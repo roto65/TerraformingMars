@@ -1,100 +1,85 @@
-package com.roto65.app_legacy;
-
-import kotlin.random.Random
+package com.roto65.app_legacy
 
 data class BoardState(var default: Int = 0) {
     var coinCount: Int = default
-    var coinIncrement: Int = Random.nextInt(-2, 10)
+    var coinIncrement: Int = default
 
     var steelCount: Int = default
-    var steelIncrement: Int = Random.nextInt(-2, 10)
+    var steelIncrement: Int = default
 
     var titaniumCount: Int = default
-    var titaniumIncrement: Int = Random.nextInt(-2, 10)
+    var titaniumIncrement: Int = default
 
     var plantCount: Int = default
-    var plantIncrement: Int = Random.nextInt(-2, 10)
+    var plantIncrement: Int = default
 
     var energyCount: Int = default
-    var energyIncrement: Int = Random.nextInt(-2, 10)
+    var energyIncrement: Int = default
 
     var heatCount: Int = default
-    var heatIncrement: Int = Random.nextInt(-2, 10)
+    var heatIncrement: Int = default
 
     var generation: Int = 1
 
     private var prev: String? = null
-    var canUndo: Boolean = false
 
     fun setCountCoin(value: Int) {
         prev = toString()
-        canUndo = true
         coinCount = value
     }
 
     fun setIncrementCoin(value: Int) {
         prev = toString()
-        canUndo = true
         coinIncrement = value
     }
 
     fun setCountSteel(value: Int) {
         prev = toString()
-        canUndo = true
         steelCount = value
     }
 
     fun setIncrementSteel(value: Int) {
         prev = toString()
-        canUndo = true
         steelIncrement = value
     }
 
     fun setCountTitanium(value: Int) {
         prev = toString()
-        canUndo = true
         titaniumCount = value
     }
 
     fun setIncrementTitanium(value: Int) {
         prev = toString()
-        canUndo = true
         titaniumIncrement = value
     }
 
     fun setCountPlant(value: Int) {
         prev = toString()
-        canUndo = true
         plantCount = value
     }
 
     fun setIncrementPlant(value: Int) {
         prev = toString()
-        canUndo = true
         plantIncrement = value
     }
 
     fun setCountEnergy(value: Int) {
         prev = toString()
-        canUndo = true
         energyCount = value
     }
 
     fun setIncrementEnergy(value: Int) {
         prev = toString()
-        canUndo = true
         energyIncrement = value
     }
 
     fun setCountHeat(value: Int) {
         prev = toString()
-        canUndo = true
         heatCount = value
     }
 
     fun setIncrementHeat(value: Int) {
         prev = toString()
-        canUndo = true
         heatIncrement = value
     }
 
@@ -110,7 +95,7 @@ data class BoardState(var default: Int = 0) {
         titaniumCount += titaniumIncrement
     }
 
-    private fun addplant() {
+    private fun addPlant() {
         plantCount += plantIncrement
     }
 
@@ -127,32 +112,35 @@ data class BoardState(var default: Int = 0) {
         energyCount = 0
     }
 
-    fun buildForest() {
+    fun buildForest(): Boolean {
         if (plantCount >= 8) {
             prev = toString()
-            canUndo = true
             plantCount -= 8
+
+            return true
         }
+        return false
     }
 
-    fun raiseTemp() {
+    fun raiseTemp(): Boolean {
         if (heatCount >= 8) {
             prev = toString()
-            canUndo = true
             heatCount -= 8
+
+            return true
         }
+        return false
     }
 
     fun productionPhase() {
         prev = toString()
-        canUndo = true
         generation++
         convertEnergy()
 
         addCoin()
         addSteel()
         addTitanium()
-        addplant()
+        addPlant()
         addEnergy()
         addHeat()
     }
@@ -173,14 +161,12 @@ data class BoardState(var default: Int = 0) {
         generation = 1
 
         prev = null
-        canUndo = false
     }
 
     fun undo() {
         if (prev != null) {
             this.fromString(prev)
             prev = null
-            canUndo = false
         }
     }
 

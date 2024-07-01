@@ -18,7 +18,6 @@ import androidx.appcompat.view.menu.MenuBuilder
 import androidx.cardview.widget.CardView
 import com.roto65.app_legacy.databinding.ActivityMainBinding
 
-
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
@@ -551,13 +550,23 @@ class MainActivity : AppCompatActivity() {
         }
 
         btnForest.setOnClickListener {
-            boardState.buildForest()
+            val success = boardState.buildForest()
+
+            if (!success) {
+                Toast.makeText(this, getString(R.string.forest_fail), Toast.LENGTH_SHORT)
+                    .show()
+            }
 
             updateLblAmountPlant()
         }
 
         btnTempRise.setOnClickListener {
-            boardState.raiseTemp()
+            val success = boardState.raiseTemp()
+
+            if (!success) {
+                Toast.makeText(this, getString(R.string.temp_rise_fail), Toast.LENGTH_SHORT)
+                    .show()
+            }
 
             updateLblAmountHeat()
         }
@@ -590,7 +599,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             R.id.about -> {
-                Toast.makeText(this, "Developed by FA SP AR", Toast.LENGTH_SHORT)
+                Toast.makeText(this, getString(R.string.credits), Toast.LENGTH_SHORT)
                     .show()
                 true
             }
@@ -611,96 +620,70 @@ class MainActivity : AppCompatActivity() {
         editor.apply()
     }
 
+    private fun formatNumber(num: Int): String {
+        return NumberFormatter.withLocale(java.util.Locale.ITALY)
+            .sign(NumberFormatter.SignDisplay.ALWAYS).format(num).toString()
+    }
+
     private fun updateLblAmountCoin() {
         coinLblAmount.text = getString(R.string.coin_lbl, boardState.coinCount.toString())
-        coinLblSubAmount.text = NumberFormatter.withLocale(java.util.Locale.ITALY)
-            .sign(NumberFormatter.SignDisplay.ALWAYS).format(boardState.coinCount).toString()
+        coinLblSubAmount.text = formatNumber(boardState.coinCount)
     }
 
     private fun updateLblIncrementCoin() {
-        coinLblIncrement.text = NumberFormatter.withLocale(java.util.Locale.ITALY)
-            .sign(NumberFormatter.SignDisplay.ALWAYS).format(boardState.coinIncrement).toString()
-        coinLblSubIncrement.text = NumberFormatter.withLocale(java.util.Locale.ITALY)
-            .sign(NumberFormatter.SignDisplay.ALWAYS).format(boardState.coinIncrement).toString()
+        coinLblIncrement.text = formatNumber(boardState.coinIncrement)
+        coinLblSubIncrement.text = formatNumber(boardState.coinIncrement)
     }
 
     private fun updateLblAmountSteel() {
         steelLblAmount.text = getString(R.string.steel_lbl, boardState.steelCount.toString())
-        steelLblSubAmount.text = NumberFormatter.withLocale(java.util.Locale.ITALY)
-            .sign(NumberFormatter.SignDisplay.ALWAYS).format(boardState.steelCount).toString()
+        steelLblSubAmount.text = formatNumber(boardState.steelCount)
     }
 
     private fun updateLblIncrementSteel() {
-        steelLblIncrement.text = NumberFormatter.withLocale(java.util.Locale.ITALY)
-            .sign(NumberFormatter.SignDisplay.ALWAYS).format(boardState.steelIncrement)
-            .toString()
-        steelLblSubIncrement.text = NumberFormatter.withLocale(java.util.Locale.ITALY)
-            .sign(NumberFormatter.SignDisplay.ALWAYS).format(boardState.steelIncrement)
-            .toString()
+        steelLblIncrement.text = formatNumber(boardState.steelIncrement)
+        steelLblSubIncrement.text = formatNumber(boardState.steelIncrement)
     }
 
     private fun updateLblAmountTitanium() {
-        titaniumLblAmount.text =
-            getString(R.string.titanium_lbl, boardState.titaniumCount.toString())
-        titaniumLblSubAmount.text = NumberFormatter.withLocale(java.util.Locale.ITALY)
-            .sign(NumberFormatter.SignDisplay.ALWAYS).format(boardState.titaniumCount)
-            .toString()
+        titaniumLblAmount.text = getString(R.string.titanium_lbl, boardState.titaniumCount.toString())
+        titaniumLblSubAmount.text = formatNumber(boardState.titaniumCount)
     }
 
     private fun updateLblIncrementTitanium() {
-        titaniumLblIncrement.text = NumberFormatter.withLocale(java.util.Locale.ITALY)
-            .sign(NumberFormatter.SignDisplay.ALWAYS).format(boardState.titaniumIncrement)
-            .toString()
-        titaniumLblSubIncrement.text = NumberFormatter.withLocale(java.util.Locale.ITALY)
-            .sign(NumberFormatter.SignDisplay.ALWAYS).format(boardState.titaniumIncrement)
-            .toString()
+        titaniumLblIncrement.text = formatNumber(boardState.titaniumIncrement)
+        titaniumLblSubIncrement.text = formatNumber(boardState.titaniumIncrement)
     }
 
     private fun updateLblAmountPlant() {
         plantLblAmount.text = getString(R.string.plant_lbl, boardState.plantCount.toString())
-        plantLblSubAmount.text = NumberFormatter.withLocale(java.util.Locale.ITALY)
-            .sign(NumberFormatter.SignDisplay.ALWAYS).format(boardState.plantCount).toString()
+        plantLblSubAmount.text = formatNumber(boardState.plantCount)
     }
 
     private fun updateLblIncrementPlant() {
-        plantLblIncrement.text = NumberFormatter.withLocale(java.util.Locale.ITALY)
-            .sign(NumberFormatter.SignDisplay.ALWAYS).format(boardState.plantIncrement)
-            .toString()
-        plantLblSubIncrement.text = NumberFormatter.withLocale(java.util.Locale.ITALY)
-            .sign(NumberFormatter.SignDisplay.ALWAYS).format(boardState.plantIncrement)
-            .toString()
+        plantLblIncrement.text = formatNumber(boardState.plantIncrement)
+        plantLblSubIncrement.text = formatNumber(boardState.plantIncrement)
 
     }
 
     private fun updateLblAmountEnergy() {
         energyLblAmount.text = getString(R.string.energy_lbl, boardState.energyCount.toString())
-        energyLblSubAmount.text = NumberFormatter.withLocale(java.util.Locale.ITALY)
-            .sign(NumberFormatter.SignDisplay.ALWAYS).format(boardState.energyCount).toString()
+        energyLblSubAmount.text = formatNumber(boardState.energyCount)
     }
 
     private fun updateLblIncrementEnergy() {
-        energyLblIncrement.text = NumberFormatter.withLocale(java.util.Locale.ITALY)
-            .sign(NumberFormatter.SignDisplay.ALWAYS).format(boardState.energyIncrement)
-            .toString()
-        energyLblSubIncrement.text = NumberFormatter.withLocale(java.util.Locale.ITALY)
-            .sign(NumberFormatter.SignDisplay.ALWAYS).format(boardState.energyIncrement)
-            .toString()
+        energyLblIncrement.text = formatNumber(boardState.energyIncrement)
+        energyLblSubIncrement.text = formatNumber(boardState.energyIncrement)
     }
 
     private fun updateLblAmountHeat() {
         heatLblAmount.text = getString(R.string.heat_lbl, boardState.heatCount.toString())
-        heatLblSubAmount.text = NumberFormatter.withLocale(java.util.Locale.ITALY)
-            .sign(NumberFormatter.SignDisplay.ALWAYS).format(boardState.heatCount).toString()
+        heatLblSubAmount.text = formatNumber(boardState.heatCount)
     }
 
     private fun updateLblIncrementHeat() {
-        heatLblIncrement.text = NumberFormatter.withLocale(java.util.Locale.ITALY)
-            .sign(NumberFormatter.SignDisplay.ALWAYS).format(boardState.heatIncrement)
-            .toString()
-        heatLblSubIncrement.text = NumberFormatter.withLocale(java.util.Locale.ITALY)
-            .sign(NumberFormatter.SignDisplay.ALWAYS).format(boardState.heatIncrement)
-            .toString()
-
+        heatLblIncrement.text = formatNumber(boardState.heatIncrement)
+        heatLblSubIncrement.text = formatNumber(boardState.heatIncrement)
     }
 
     private fun updateLblGeneration() {

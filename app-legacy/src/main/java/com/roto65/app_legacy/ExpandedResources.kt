@@ -41,7 +41,7 @@ data class ExpandedResources(val default: Boolean = false) {
     }
 
     override fun toString(): String {
-        var s: String = ""
+        var s = ""
 
         s += if (coinExpanded) {
             "1,"
