@@ -165,7 +165,7 @@ fun Header(scrollBehavior: TopAppBarScrollBehavior) {
                 },
                     enabled = boardState.canUndo,
                     text = {
-                        Text("Undo")
+                        Text(stringResource(id = R.string.undo))
                     },
                     leadingIcon = {
                         Icon(
@@ -179,7 +179,7 @@ fun Header(scrollBehavior: TopAppBarScrollBehavior) {
                     expanded = false
                 },
                     text = {
-                        Text("Clear")
+                        Text(stringResource(id = R.string.clear))
                     },
                     leadingIcon = {
                         Icon(
@@ -192,7 +192,7 @@ fun Header(scrollBehavior: TopAppBarScrollBehavior) {
                     Toast.makeText(context, credits, Toast.LENGTH_SHORT).show()
                 },
                     text = {
-                        Text("About")
+                        Text(stringResource(id = R.string.about))
                     },
                     leadingIcon = {
                         Icon(
@@ -269,7 +269,7 @@ fun Footer(boardState: BoardState, modifier: Modifier = Modifier) {
                     )
                 }
                 Text(
-                    text = "Generation",
+                    text = stringResource(id = R.string.generation),
                     fontSize = MaterialTheme.typography.bodySmall.fontSize,
                 )
             }
@@ -288,7 +288,7 @@ fun Footer(boardState: BoardState, modifier: Modifier = Modifier) {
                         .aspectRatio(1f)
                 )
                 Text(
-                    text = "Production",
+                    text = stringResource(id = R.string.production),
                     fontSize = MaterialTheme.typography.bodySmall.fontSize,
                 )
             }
@@ -314,7 +314,7 @@ fun Footer(boardState: BoardState, modifier: Modifier = Modifier) {
                         .aspectRatio(1f)
                 )
                 Text(
-                    text = "Forest",
+                    text = stringResource(id = R.string.forest),
                     fontSize = MaterialTheme.typography.bodySmall.fontSize,
                 )
             }
@@ -340,7 +340,7 @@ fun Footer(boardState: BoardState, modifier: Modifier = Modifier) {
                         .aspectRatio(1f)
                 )
                 Text(
-                    text = "Temp Rise",
+                    text = stringResource(id = R.string.temp_rise),
                     fontSize = MaterialTheme.typography.bodySmall.fontSize,
                 )
             }

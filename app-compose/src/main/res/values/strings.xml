@@ -1,5 +1,9 @@
 <resources>
     <string name="app_name">Terraforming Mars - Compose</string>
+    <string name="generation">Generation</string>
+    <string name="production">Production</string>
+    <string name="forest">Forest</string>
+    <string name="temp_rise">Temp Rise</string>
     <string name="resource_coin">Coins</string>
     <string name="resource_steel">Steel</string>
     <string name="resource_titanium">Titanium</string>
@@ -8,6 +12,9 @@
     <string name="resource_heat">Heat</string>
     <string name="label_amount">Amount</string>
     <string name="label_increment">Increment</string>
+    <string name="undo">Undo</string>
+    <string name="clear">Clear</string>
+    <string name="about">About</string>
     <string name="forest_fail">Not enough plants</string>
     <string name="temp_rise_fail">Not enough heat</string>
     <string name="credits">Developed by FA SP AR</string>
